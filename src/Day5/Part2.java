@@ -27,6 +27,7 @@ public class Part2 {
 
 	void go() {
 		List<String> lines = new Common().getPuzzleInput("src/Day5/input");
+		final String alphabet = "abcdefghijklmnopqrstuvwxyz";
 		int length1 = Integer.MAX_VALUE;
 		int length2 = Integer.MAX_VALUE;
 
@@ -34,14 +35,15 @@ public class Part2 {
 			fatal();
 
 		final String puzzle = new String(lines.get(0));
-		String alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 		System.out.println("Please stand by while calculating the answer...");
 
 		for (int i = 0; i < alphabet.length(); i++) {
 			final char c1 = alphabet.charAt(i);
 			final char c2 = Character.toUpperCase(c1);
+
 			length1 = reactGetLength(getModifiedString(new String(puzzle), c1, c2));
+
 			if (length1 < length2)
 				length2 = length1;
 		}
