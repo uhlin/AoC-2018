@@ -29,16 +29,13 @@ public class Part1 {
 
 			if (Character.isLowerCase(c1) && Character.isLowerCase(c2)) {
 				i += 1;
-				continue;
 			} else if (Character.isUpperCase(c1) && Character.isUpperCase(c2)) {
 				i += 1;
-				continue;
 			} else if (Character.toLowerCase(c1) == Character.toLowerCase(c2)) {
 				char[] array = { c1, c2 };
 
 				puzzle = puzzle.replaceFirst(new String(array), "");
 				i = 0;
-				continue;
 			} else {
 				i += 1;
 			}
