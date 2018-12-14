@@ -1,6 +1,7 @@
 package Day5;
 
 import java.util.List;
+import java.util.Random;
 
 import Common.Common;
 
@@ -27,6 +28,7 @@ public class Part2 {
 
 	void go() {
 		List<String> lines = new Common().getPuzzleInput("src/Day5/input");
+		Random random = new Random(System.currentTimeMillis());
 		final String alphabet = "abcdefghijklmnopqrstuvwxyz";
 		int length1 = Integer.MAX_VALUE;
 		int length2 = Integer.MAX_VALUE;
@@ -46,8 +48,12 @@ public class Part2 {
 
 			if (length1 < length2)
 				length2 = length1;
+
+			final int value = random.nextInt() % 2;
+			System.out.print((value != 0) ? 'P' : 'p');
 		}
 
+		System.out.print('\n');
 		System.out.println(length2);
 	}
 
